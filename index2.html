@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Responsive UI - Top Level Navigation</title>
+        <style>
+            html, body {
+                font-size: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 62.5%;
+            }
+            /* Navigation
+---------------------------------------------------------------------------------------- //// */
+            #nav {
+                font-size: 1.5em;
+                position:relative;
+                left:-3%;
+                padding:42px 0 0;
+                width:106%
+            }
+            #nav ul {
+                margin:0
+            }
+            /* nav control ----------------------------------------------- //// */
+            #nav .nav_control {
+                padding:0 3%
+            }
+            #nav .nav_control a {
+                display:inline-block;
+                float:right;
+                padding:10px 10px 14px;
+                width:21px;
+                height:17px;
+                background:#1e1e1e;
+                text-indent:9999px;
+                overflow:hidden
+            }
+            #nav .nav_control a {
+                background-color:red
+            }
+            #nav .nav_control a:hover, #nav .nav_control a:focus {
+                background-color:blue
+            }
+            #nav .nav_control a:active {
+                background-color:yellow
+            }
+            /* ---- open ---- */
+            #nav.open .nav_control a, #nav.open .nav_control a:active, #nav.open .nav_control a:focus {
+                background-color:#1e1e1e;
+                background-position:-31px 12px
+            }
+            /* nav menu ----------------------------------------------- //// */
+            #nav .nav_menu {
+                clear:both;
+                overflow:hidden;
+                -moz-transition: all 250ms cubic-bezier(.42, 0, .58, 1);
+                /* ease-in-out */
+                -ms-transition: all 250ms cubic-bezier(.42, 0, .58, 1);
+                -o-transition: all 250ms cubic-bezier(.42, 0, .58, 1);
+                -webkit-transition:all 250ms cubic-bezier(.42, 0, .58, 1);
+                transition: all 250ms cubic-bezier(.42, 0, .58, 1)
+            }
+            #nav .nav_menu {
+                display:none
+            }
+            #nav.open .nav_menu {
+                display:block
+            }
+            #nav ul {
+                overflow:hidden;
+                margin-bottom:0;
+                padding:6% 0;
+                background:#bababa
+            }
+            #nav li {
+                margin:0
+            }
+            /* tab ----------------------------------------------- */
+            #nav .tab {
+                display:block;
+                padding:3% 16%;
+                color:#fff;
+                line-height:1;
+                /* 14px */
+            }
+            #nav .tab strong {
+                font-weight:normal;
+                font-size:1.285714em;
+                /* 18px */
+            }
+            #nav .tab span {
+                color:#959595;
+                font-size:.857142em;
+                /* 12px */
+            }
+            /* ---- hover, active, focus ---- */
+            #nav .tab:hover, #nav .tab:focus {
+                background:#272727
+            }
+            #nav .tab:active {
+                background:#cc3131
+            }
+            #nav .tab:active span {
+                color:rgba(255, 255, 255, .5)
+            }
+            /* individual menus ----------------------------------------------- //// */
+            #menus .fields {
+                display:none
+            }
+            /* MEDIA QUERY: 480px
+---------------------------------------------------------------------------------------- //// */
+            @media(min-width:480px) {
+                /* nav menu ----------------------------------------------- //// */
+                #nav li {
+                    float:left;
+                    width:50%
+                }
+                /* tab ----------------------------------------------- */
+                #nav .tab {
+                    padding:3% 8%
+                }
+            }
+            /* MEDIA QUERY: 600px
+---------------------------------------------------------------------------------------- //// */
+            @media(min-width:600px) {
+                #nav {
+                    position:static;
+                    padding:93px 0 0;
+                    width:auto
+                }
+                /* nav control ----------------------------------------------- //// */
+                #nav .nav_control {
+                    display:none
+                }
+                /* nav menu ----------------------------------------------- //// */
+                #nav .nav_menu {
+                    display:block
+                }
+                #nav .nav_menu {
+                    height:auto
+                }
+                #nav ul {
+                    padding:0;
+                    background:none
+                }
+                #nav li {
+                    margin:0 1px 1px 0;
+                    width:auto
+                }
+                /* tab ----------------------------------------------- */
+                #nav .tab {
+                    padding:1em .75em;
+                    border-bottom:11px solid #fff;
+                    color:#cc3131
+                }
+                #nav .tab strong {
+                    font-size:1.285714em;
+                    /* 18spx */
+                    line-height:1;
+                    /* 18px */
+                    letter-spacing:.01em
+                }
+                #nav .selected .tab strong {
+                    color:#1e1e1e
+                }
+                #nav .tab span {
+                    display:none
+                }
+                /* ---- hover, active, focus ---- */
+                #nav .tab:hover, #nav .tab:active, #nav .tab:focus {
+                    background:#e1e1e1
+                }
+                #nav .tab:active span {
+                    color:#53534a
+                }
+                /* ---- 
+	 ---- */
+                #nav .open .tab {
+                    border-bottom-color:#1e1e1e;
+                    background:#1e1e1e
+                }
+                #nav .open .tab strong {
+                    color:#71b43a
+                }
+                #nav .open .tab span {
+                    color:#fff
+                }
+                /* individual menus ----------------------------------------------- //// */
+                #menus {
+                    position:relative;
+                    margin:-15px 0 1em;
+                    background:#1e1e1e;
+                    color:#fff
+                }
+                #menus > .container {
+                    overflow:hidden
+                }
+                #menus > .container {
+                    -moz-transition: all 250ms cubic-bezier(.42, 0, .58, 1);
+                    /* ease-in-out */
+                    -ms-transition: all 250ms cubic-bezier(.42, 0, .58, 1);
+                    -o-transition: all 250ms cubic-bezier(.42, 0, .58, 1);
+                    -webkit-transition:all 250ms cubic-bezier(.42, 0, .58, 1);
+                    transition: all 250ms cubic-bezier(.42, 0, .58, 1)
+                }
+                #menus .fields {
+                    font-size:.928571em
+                    /* 13px */
+                    ;
+                    line-height:1.230769;
+                    /* 16px */
+                }
+                #menus .fields.open {
+                    display:block
+                }
+                #menus p {
+                    color:#767676
+                }
+                #menus p, #menus p a {
+                    font-weight:bold
+                }
+                /* menu content ----------------------------------------------- */
+                .menu_content {
+                    background:#1e1e1e
+                }
+                .menu_content ol {
+                    margin:0 0 1em;
+                    list-style:none
+                }
+                .menu_content > ol {
+                    min-height:109px
+                }
+                .menu_content p, .menu_content li li {
+                    margin-bottom:.3076923em;
+                    /* 4px */
+                }
+                .menu_content a {
+                    color:#fff
+                }
+                .menu_content li li a {
+                    color:rgba(255, 255, 255, .9)
+                }
+                .menu_content .blocks a {
+                    font-weight:normal
+                }
+                .menu_content .selected a {
+                    background:#cc3131
+                }
+                /* ---- menu heading ---- */
+                .menu_heading {
+                    position:relative;
+                    margin:0 8px 1.3em 12px;
+                    padding:1em 0 .25em 4px;
+                    border-bottom:2px solid #68ab3c;
+                    font-size:1.230769em;
+                    /* 16px */
+                }
+                .menu_heading > a {
+                    font-size:1.125em;
+                    /* 18px */
+                }
+                #menus .button_cancel {
+                    position:absolute;
+                    top:10px;
+                    right:0;
+                    display:block;
+                    margin:0
+                }
+                #menus .button_cancel button {
+                    padding:2px 5px;
+                    border-color:#1e1e1e;
+                    color:#fff;
+                    font-size:.875em;
+                    /* 14px */
+                }
+                /* ---- menu suggestion title ---- */
+                #menus .menu_suggestion_title {
+                    clear:both;
+                    margin:0 8px .5em 12px;
+                    padding:.75em 4px 0;
+                    border-top:1px solid #5e5f62;
+                    font-weight:normal;
+                    font-size:1.230769em;
+                    /* 16px */
+                    line-height:1.125;
+                    /* 18px */
+                }
+                /* ---- menu links ---- */
+                .menu_suggestion_links {
+                    overflow:hidden;
+                    margin:0 8px 0 12px;
+                    padding:0 4px
+                }
+                .menu_suggestion_links li {
+                    float:left;
+                    margin-right:16px
+                }
+                /* menu promo ----------------------------------------------- */
+                .menu_promo a, .menu_promo .anchor {
+                    display:block;
+                    overflow:hidden;
+                    margin:20px 11px;
+                    padding:5px 5px 5px 159px;
+                    color:#fff;
+                    font-size:1.076923em;
+                    /* 14px */
+                    line-height:1.357143;
+                    /* 19px */
+                }
+                #menus .menu_promo p {
+                    margin-bottom:.461538em;
+                    /* 6px */
+                    max-width:270px;
+                    color:#fff;
+                    font-weight:normal
+                }
+                .menu_promo img {
+                    float:left;
+                    margin:0 0 0 -154px
+                }
+            }
+            /* MEDIA QUERY: 769px
+---------------------------------------------------------------------------------------- //// */
+            @media(min-width:769px) {
+                #nav {
+                    padding:38px 0 0 104px
+                }
+                /* nav menu ----------------------------------------------- //// */
+                /* tab ----------------------------------------------- */
+                #nav .tab {
+                    padding:1em
+                }
+                #nav .tab strong {
+                    font-size:1.571429em;
+                    /* 22px */
+                    line-height:1.136364;
+                    /* 25px */
+                }
+                #nav .tab span {
+                    display:block;
+                    color:#53534a;
+                    font-size:.785714em;
+                    /* 11px */
+                }
+                /* individual menus ----------------------------------------------- //// */
+                #menus {
+                    margin:-20px 0 1.5em
+                }
+                /* menu content ----------------------------------------------- */
+                .menu_content {
+                    padding:0 0 0 110px
+                }
+                /* menu promo ----------------------------------------------- */
+                .menu_promo a, .menu_promo .anchor {
+                    margin-right:0;
+                    margin-left:0;
+                    padding-left:5px;
+                    max-width:139px
+                }
+                .menu_promo img {
+                    float:none;
+                    margin:0
+                }
+            }
+        </style>
+    </head>
+    
+    <body class="csstransitions">
+        <h1>Top Level Navigation</h1>
+        <div id="nav" class="full">
+            <div class="nav_control">
+                <a href="#nav">Navigation</a>
+            </div>
+            <div class="nav_menu">
+                <ul>
+                    <li id="nav_nav1" class="">
+                        <a href="#" class="tab"><strong>Nav Item</strong><br><span>Ooooh! Nav!</span></a>
+                    </li>
+                    <li id="nav_nav2">
+                        <a href="#" class="tab"><strong>Nuther Nav</strong><br><span>Always a'nuther</span></a>
+                    </li>
+                    <li id="nav_nav3">
+                        <a href="#" class="tab"><strong>Have Nav</strong><br><span>Well do you?</span></a>
+                    </li>
+                    <li id="nav_nav4">
+                        <a href="#" class="tab"><strong>Way Nav</strong><br><span>Way</span></a>
+                    </li>
+                    <li id="nav_nav5">
+                        <a href="#" class="tab"><strong>About a Nav</strong><br><span>What's Up With Nav</span></a>
+                    </li>
+                    <li id="nav_nav6">
+                        <a href="#" class="tab"><strong>Social Nav</strong><br><span>Talk About It</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="menus">
+            <ol class="container">
+                <li class="fields" id="menu_nav1">
+                    <div class="region menu_content">
+                    	<h2>First things first</h2>
+                        <ol class="blocks blocks-four-up">
+                            <li>
+                                <p>Dishes</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">pastrami chicken</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">drumstick meatloaf</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">chuck shank corned beef</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">frankfurter kielbasa</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">filet mignon</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">pork fatback pancetta</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>Meat</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">andouille strip steak</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">tri-tip flank</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">prosciutto kielbasa</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">chuck shank tri-tip</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ham hock</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">turducken salami</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>Savory</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">chuck tongue</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ribeye chuck</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">jowl brisket beef</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">pork chop</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">corned beef</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">frankfurter</a>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="fields" id="menu_nav2">
+                    <div class="region menu_content">
+                    	<h2>Yet another nav</h2>
+                        <ol class="blocks blocks-four-up">
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">change</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">hope</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">dreams</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">courage</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="fields" id="menu_nav3">
+                    <div class="region menu_content">
+                    	<h2>I don't think you can handle all this nav</h2>
+                        <ol class="blocks blocks-four-up">
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="fields" id="menu_nav4">
+                    <div class="region menu_content">
+                    	<h2>Nav? Way.</h2>
+                        <ol class="blocks blocks-four-up">
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="fields" id="menu_nav5">
+                    <div class="region menu_content">
+                    	<h2>All about a nav</h2>
+                        <ol class="blocks blocks-four-up">
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="fields" id="menu_nav6">
+                   <div class="region menu_content">
+                   		<h2>Let's get social!</h2>
+                        <ol class="blocks blocks-four-up">
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p>All this nav!</p>
+                                <ol>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sub Nav Item</a>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" charset="utf-8"></script>
+        <script>
+            var nav = {},
+                $nav = $('#nav'),
+                $navControl = $nav.find('.nav_control'),
+                $navMenu = $nav.find('.nav_menu'),
+                $navList = $navMenu.find('ul'),
+                $navAnchors = $navList.find('.tab'),
+                $megaMenus = $('#menus');
+
+            nav.currentType = '';
+
+            nav.findItemName = function ($item) {
+                return $item.attr('id').replace('nav_', '');
+            };
+
+            /* full ----------------------------------------------- //// */
+            nav.full = function () {
+                nav.small.deactivate();
+                nav.full.activate();
+            };
+
+            nav.full.activate = function () {
+                // set full menu
+                nav.currentType = 'full';
+                $nav.addClass('full');
+                console.info('superMegaUltraMenu = ' + nav.currentType);
+
+                // tab
+                $navAnchors.bind('click', function () {
+                    var $thisNav = $(this).parent('li'),
+                        thisItem = nav.findItemName($thisNav),
+                        isThisNavOpen = $thisNav.hasClass('open');
+
+                    if ($megaMenus.find('#menu_' + thisItem).length > 0) {
+                        if ($navList.find('li.open').length > 0) {
+                            nav.full.close(nav.findItemName($navList.find('li.open')));
+                        }
+
+                        if (!isThisNavOpen) {
+                            nav.full.open(thisItem);
+                            console.log("what is not happening");
+                        }
+
+                        return false;
+                    }
+                });
+            };
+
+            nav.full.close = function (item) {
+                if (nav.enhancedMenu) {
+                    $megaMenus.find('.container').css('height', '0').removeAttr('style');
+                }
+
+                $navList.find('#nav_' + item).removeClass('open');
+                $megaMenus.find('#menu_' + item).removeClass('open');
+
+                $(document).off('click.megaMenu.full');
+
+                $nav.trigger('megaMenu.full.close');
+            };
+
+            nav.full.deactivate = function () {
+                if (nav.currentType === 'full') {
+                    $nav.removeClass('full');
+                    $navAnchors.unbind('click');
+
+                    if ($navList.find('li.open').length > 0) {
+                        nav.full.close(nav.findItemName($navList.find('li.open')));
+                    }
+                }
+            };
+
+            nav.full.open = function (item) {
+                $navList.find('#nav_' + item).addClass('open');
+                $megaMenus.find('#menu_' + item).addClass('open');
+
+                if (nav.enhancedMenu) {
+                    var thisMenuHeight = $megaMenus.find('#menu_' + item).css('height');
+                    $megaMenus.find('.container').attr('data-height', thisMenuHeight).css('height', thisMenuHeight);
+                }
+
+                $(document).on('click.megaMenu.full', function (e) {
+                    if ($(e.target).parents().filter($megaMenus).length !== 1) {
+                        nav.full.close(nav.findItemName($navList.find('li.open')));
+                    }
+                });
+
+                $nav.trigger('megaMenu.full.open');
+            };
+
+            /* small ----------------------------------------------- //// */
+            nav.small = function () {
+                nav.full.deactivate();
+                nav.small.activate();
+            };
+
+            nav.small.activate = function () {
+                // set small menu
+                nav.currentType = 'small';
+                $nav.addClass('small');
+                console.info('superUltraMegaMenu = ' + nav.currentType);
+
+                // menu control
+                $navControl.bind('click', function () {
+                    if ($nav.hasClass('open')) {
+                        nav.small.close();
+                    } else {
+                        nav.small.open();
+                    }
+                    $('li.utility_dropdown.open').removeClass('open');
+
+                    return false;
+                });
+            };
+
+            nav.small.close = function () {
+                if (nav.enhancedMenu) {
+                    $navMenu.css('height', '0').removeAttr('style');
+                }
+
+                $nav.removeClass('open');
+            };
+
+            nav.small.deactivate = function () {
+                if (nav.currentType === 'small') {
+                    $nav.removeClass('small');
+                    $navControl.unbind('click');
+                    nav.small.close();
+                }
+            };
+
+            nav.small.open = function () {
+                $nav.addClass('open');
+
+                if (nav.enhancedMenu) {
+                    $navMenu.css('height', $navList.outerHeight() + 'px');
+                }
+
+                $(document).on('click.megaMenu.small', function (e) {
+                    if ($(e.target).parents().filter($('div.nav_menu')).length !== 1) {
+                        nav.small.close();
+                    }
+                });
+            };
+
+            nav.init = function () {
+                if ($(window).width() > 600) {
+                    if (nav.currentType !== 'full') {
+                        nav.full();
+                    }
+                } else {
+                    if (nav.currentType !== 'small') {
+                        nav.small();
+                    }
+                }
+            };
+            
+            window.onresize = function(event) {
+			    if ($(window).width() > 600) {
+                    if (nav.currentType !== 'full') {
+                        nav.full();
+                    }
+                } else {
+                    if (nav.currentType !== 'small') {
+                        nav.small();
+                    }
+                }
+			}
+
+            $(function () {
+                nav.init();
+            });
+            
+            
+            var bodyWidth = $(window).width();
+        </script>
+    </body>
+
+</html>
